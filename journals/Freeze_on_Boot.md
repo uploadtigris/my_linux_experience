@@ -46,7 +46,7 @@ exit
 sudo reboot
 ```
 
-- reboot int tty mode (no GUI)... forgot username.
+- reboot into tty mode (no GUI)... forgot username.
 - Reboot while hold 'Esc'
 - pressed 'e' on Fedora entry I am fixing
 - added 'systemd.unit=emergency.target' to the line starting with 'Linux'
