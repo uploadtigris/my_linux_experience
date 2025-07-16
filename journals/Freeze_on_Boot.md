@@ -10,7 +10,7 @@ Stuck on logo boot screen ~ Fedora 42 KDE Plasma Desktop (installed 07/16/25 via
    
 ## Solution
 
-# Live boot media with Fedora 24 KDE Plasma Desktop.
+#### Live boot media with Fedora 24 KDE Plasma Desktop.
 
 ** Open terminal **
 
