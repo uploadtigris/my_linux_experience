@@ -105,3 +105,5 @@ Grepping for the current driver ~ verifying I am using an NVIDIA driver
 ```
 lspci -k | grep -A 2 -i nvidia
 ```
+
+* System works! YAY! *
