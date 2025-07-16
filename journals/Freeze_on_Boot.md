@@ -57,8 +57,12 @@ sudo reboot
 cat /etc/passwd | grep 1000
 ```
 
+grabbed this username output. Exited.
+
+*continuing on*
+
 Updated the system in the root terminal after loging in with my credentials.
-* There were almost 2 GB of updates to be done with the following command **
+** There were almost 2 GB of updates to be done with the following command **
 ```
 sudo dnf udpate
 ```
