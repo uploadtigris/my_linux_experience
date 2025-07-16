@@ -5,3 +5,5 @@ I have had some experiences with installing Linux OSs for a while. Now I want to
 
 ![](imgs/ff.png)
 
+In `jounals` you can find various errors that I have gone through troubleshooting.
+Hopefully, I can start contributing to some sort of error resolution effort. If you know of anything good, send me a message!
