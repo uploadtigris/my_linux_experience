@@ -62,3 +62,46 @@ Updated the system in the root terminal after loging in with my credentials.
 ```
 sudo dnf udpate
 ```
+
+Reinstalling the GUI
+```
+sudo dnf install akmod-nvidia
+sudo akmods --force
+sudo dracut --force
+sudo systemctl set-default graphical.target
+sudo reboot
+```
+
+Temporarily reenable the GUI
+```
+sudo systemctl start display-manager
+```
+
+Installed the newer NVIDIA drivers
+``` 
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+``` 
+sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+```
+
+build drivers and boot image
+```
+sudo akmods --force
+sudo dracut --force
+sudo reboot
+```
+
+At system reboot, the system was going to TTY as a default.
+Thus, I logged in with my credentials again and rain the following code to reset the defaults.
+```
+sudo systemctl start display-manager
+```
+```
+sudo systemctl set-default graphical.target
+```
+
+Grepping for the current driver ~ verifying I am using an NVIDIA driver
+```
+lspci -k | grep -A 2 -i nvidia
+```
