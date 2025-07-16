@@ -3,3 +3,5 @@ I have had some experiences with installing Linux OSs for a while. Now I want to
 
 ## \# My Build
 
+![](imgs/ff.png)
+
