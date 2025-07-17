@@ -14,38 +14,44 @@ Stuck on logo boot screen ~ Fedora 42 KDE Plasma Desktop (installed 07/16/25 via
 
 ** Open terminal **
 
-```
+``` bash
 # Create mount point
 sudo mkdir /mnt/system
-
+```
+``` bash
 # Mount your system
 sudo mount -t btrfs -o subvol=root /dev/nvme0n1p3 /mnt/system
-
+```
+``` bash
 # create directories
 sudo mkdir -p /mnt/system/dev
 sudo mkdir -p /mnt/system/proc
 sudo mkdir -p /mnt/system/sys
-
+```
+``` bash
 # mount system
 sudo mount --bind /dev /mnt/system/dev
 sudo mount --bind /proc /mnt/system/proc
 sudo mount --bind /sys /mnt/system/sys
-
+```
+``` bash
 # chroot into system
 sudo chroot /mnt/system
-
+```
+``` bash
 # removing drivers and performing regen
 dnf remove -y nvidia-driver nvidia-driver-libs akmod-nvidia
 dracut --force --regenerate-all
 systemctl set-default multi-user.target
-
+```
+``` bash
 # exit 
 exit
-
+```
+``` bash
 # reboot
 sudo reboot
 ```
-
 - reboot into tty mode (no GUI; should do this automatically)... forgot username.
 - Reboot while hold 'Esc'
 - pressed 'e' on Fedora entry I am fixing
