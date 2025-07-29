@@ -17,4 +17,38 @@ sudo apt install i2c-tools
 ```
 sudo bash ./2pa-byps.sh 2
 ```
-For me, the second I ran the last command the subwoofers came on. Good luck!
+For me, the second I ran the last command the subwoofers came on.
+
+On every reboot, the script needs to be run. I could use either Systemd or create a cron job for these tasks. I will opt to use Cron as my task is simple and doesn't require advanced features.
+
+```
+# Move your script from Downloads to /usr/local/bin/
+sudo mv ~/Downloads/2pa-byps.sh /usr/local/bin/subwoofer-fix```
+```
+```
+# verify that the script is in the system wide 'usr' folder
+ls /usr/local/bin/ | grep subwoofer-fix
+```
+```
+# make the script executable
+sudo chmod +x /usr/local/bin/subwoofer-fix
+```
+```
+# Test it with the correct bus number (2, as you discovered)
+sudo /usr/local/bin/subwoofer-fix 2
+```
+```
+# Open the root crontab
+sudo crontab -e
+```
+enter this line into the file.
+```
+@reboot /usr/local/bin/subwoofer-fix 2 >> /var/log/subwoofer-fix.log 2>&1
+```
+if using vi, then press Esc & enter ```:wq``` , then ENTER
+```
+# verify the cron job was added
+# Make sure the cron job is listed as in the cron tab file
+sudo crontab -l
+```
+*note: Any output or errors will be logged to ```/var/log/subwoofer-fix.log```*
