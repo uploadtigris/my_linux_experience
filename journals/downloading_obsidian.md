@@ -46,3 +46,34 @@ Adding this to the ~/.bashrc file allows for:
 - Terminal convenience - quick to launch if you live in the terminal
 - Scriptable - easy to incorporate into shell scripts
 - Minimal - doesn't clutter the applications menu
+
+```
+# Create icons directory if it doesn't exist
+mkdir -p ~/.local/share/icons
+
+# Extract from AppImage
+cd /tmp
+/opt/obsidian.appimage --appimage-extract >/dev/null 2>&1
+cp squashfs-root/usr/share/icons/hicolor/512x512/apps/obsidian.png ~/.local/share/icons/obsidian.png
+rm -rf squashfs-root
+cd ~
+```
+
+```
+# Update the desktop entry with the icon
+cat > ~/.local/share/applications/obsidian.desktop << EOF
+[Desktop Entry]
+Name=Obsidian
+Exec=/opt/obsidian.appimage
+Icon=obsidian
+Type=Application
+Categories=Office;TextEditor;
+Comment=A powerful knowledge base on top of a local folder of plain text Markdown files
+EOF
+```
+```
+# Update desktop database
+update-desktop-database ~/.local/share/applications/
+```
+for me, the above steps worked!
+
