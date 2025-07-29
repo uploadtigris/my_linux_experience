@@ -29,9 +29,20 @@ Categories=Office;TextEditor;
 Comment=A powerful knowledge base on top of a local folder of plain text Markdown files
 EOF
 ```
+The Desktop Entry option allows for:
+- GUI integration - appears in your applications menu, can be pinned to dock/taskbar
+- System-wide feel - behaves like any other installed application
+- File associations - can be set as default app for markdown files
+- Search integration - shows up when you search for "Obsidian" in your desktop environment
+- User-friendly - non-technical users can find and launch it easily
+  
 3. Add to the ~/.bashrc file
 ```
 # Add alias to ~/.bashrc (for terminal)
 echo "alias obsidian='/opt/obsidian.appimage'" >> ~/.bashrc
 source ~/.bashrc
 ```
+Adding this to the ~/.bashrc file allows for:
+- Terminal convenience - quick to launch if you live in the terminal
+- Scriptable - easy to incorporate into shell scripts
+- Minimal - doesn't clutter the applications menu
