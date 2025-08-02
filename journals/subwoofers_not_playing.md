@@ -34,7 +34,7 @@ ls /usr/local/bin/ | grep subwoofer-fix
 sudo chmod +x /usr/local/bin/subwoofer-fix
 ```
 ```
-# Test it with the correct bus number (2, as you discovered)
+# Test it with the correct bus number
 sudo /usr/local/bin/subwoofer-fix 2
 ```
 ```
