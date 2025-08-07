@@ -48,3 +48,9 @@ pactl info | grep "Sample Specification"
 ```
 
 System works and sounds massively better! 🎧 🥁 🤘 😈
+
+### notes:
+
+If you experience any issues at 384kHz (crackling, dropouts, etc.), you can step down the bitrate to:
+- 192000 (very stable)
+- 96000 (universal compatibility)
