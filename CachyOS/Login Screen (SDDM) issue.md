@@ -18,8 +18,10 @@ ls -ld /var/lib/sddm/.config
 ls -ld /var/lib/sddm/.config/sddm-greeter
 ```
 ```
+# Then, try creating an empty qt6rc file as the sddm user:
 sudo -u sddm touch /var/lib/sddm/.config/sddm-greeter/qt6rc
 ```
 ```
+# After that, restart SDDM:
 sudo systemctl restart sddm
 ```
