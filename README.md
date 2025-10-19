@@ -4,9 +4,12 @@ I have had some experiences with installing Linux OSs for a while. Now I want to
 ## \# My Build
 
 ![](imgs/ff.png)
+![](imgs/Screenshot_20251019_123554.png)
 
 In `jounals` you can find various issues I have experienced and dealt with.
 
 Hopefully, I can start contributing to some sort of error resolution effort. 
 
 If you know of anything good, send me a message!
+
+
