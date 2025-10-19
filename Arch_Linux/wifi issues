@@ -1,0 +1,19 @@
+# 1️⃣ Stop services that might use the Wi-Fi driver
+sudo systemctl stop NetworkManager
+sudo systemctl stop iwd
+sudo systemctl stop wpa_supplicant
+
+# 2️⃣ Force unload and reload the Intel Wi-Fi driver
+sudo rmmod iwlwifi
+sudo modprobe iwlwifi
+
+# 3️⃣ Bring the interface up (replace wlan0 if needed)
+sudo ip link set wlan0 up
+
+# 4️⃣ Restart NetworkManager
+sudo systemctl start NetworkManager
+
+# 5️⃣ Scan and connect to your Wi-Fi
+nmcli device wifi rescan
+nmcli device wifi list
+nmcli device wifi connect "YourSSID" password "YourPassword"
