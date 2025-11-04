@@ -5,8 +5,5 @@ I am mainly using Fedora 42 as my work & study machine, Cent OS Stream as my ser
 
 In `jounals` you can find various issues I have experienced and dealt with. Specifically with Fedora 42.
 
-Hopefully, I can start contributing to some sort of error resolution effort. 
-
-If you know of anything good, send me a message!
 
 
