@@ -5,5 +5,7 @@ I am mainly using Fedora 42 as my work & study machine, Rocky Linux Stream as my
 
 In `jounals` you can find various issues I have experienced and dealt with. Specifically with Fedora 42.
 
+11/18/25 Update: I have moved my Laptop back to Windows 11. The support for desktop linux was not very good. I will also benefit from having a Windows machine as I use Azure at work. I will continue to use CachyOS on my desktop.
+
 
 
