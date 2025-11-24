@@ -1,2 +1,0 @@
-# Rocky Linux Setup
-
