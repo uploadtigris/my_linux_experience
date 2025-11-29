@@ -7,5 +7,10 @@ In `jounals` you can find various issues I have experienced and dealt with. Spec
 
 11/18/25 Update: I have moved my Laptop back to Windows 11. The support for desktop linux was not very good. I will also benefit from having a Windows machine as I use Azure at work. I will continue to use CachyOS on my desktop.
 
-
+11/29/25:
+- Windows 11 sucks, I am recongifuring my setup:
+- Gaming PC --> CachyOS
+- Study/Personal Laptop --> MX Linux
+- Homelab/Testing Laptop --> Ubuntu 22.4 LTS
+- Homelab services latop --> Proxmox
 
