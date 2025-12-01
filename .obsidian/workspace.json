@@ -1,0 +1,194 @@
+{
+  "main": {
+    "id": "2aa19d740fdf3b85",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b0b10f1782e4e56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7cb50cc250926a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LinuxJourney_Notes/01_commandLine.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_commandLine"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8a93f39cd44d6a50",
+    "type": "split",
+    "children": [
+      {
+        "id": "cb6203478e37ffb0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c1abd16f2f12b3ca",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6c7a3cda77ce42c8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#DisplayLink",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d80d2b1e2fa2f517",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7b6460105bc0bfed",
+    "type": "split",
+    "children": [
+      {
+        "id": "d87102f9b7c14961",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0edb89d81f786a64",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CachyOS/GIF to animated wallpaper.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for GIF to animated wallpaper"
+            }
+          },
+          {
+            "id": "ecba5a812ab9c017",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CachyOS/GIF to animated wallpaper.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from GIF to animated wallpaper"
+            }
+          },
+          {
+            "id": "2fb0654c5ad82a64",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bb8bcdb384eee3e2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "aba60388760a4528",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CachyOS/GIF to animated wallpaper.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of GIF to animated wallpaper"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e7cb50cc250926a7",
+  "lastOpenFiles": [
+    "CachyOS/GIF to animated wallpaper.md",
+    "CachyOS/installing_virtmanager.md",
+    "CachyOS/Login Screen (SDDM) issue.md",
+    "CachyOS/enabling_flatpaks.md",
+    "CachyOS/DisplayLink_drivers.md"
+  ]
+}
