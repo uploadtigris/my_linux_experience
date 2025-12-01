@@ -1,0 +1,47 @@
+# Installing Virtmanager
+
+With flahub enabled and flatpacrun
+```
+sudo pacman -S flatpak
+```
+Restart
+
+Install Virtual Machine Manager from Flathub
+```
+flatpak install flathub org.virt_manager.virt-manager
+```
+
+## install all required packages
+```
+sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat iptables-nft
+```
+
+## enable and start system services
+```
+sudo systemctl enable --now libvirtd.service
+sudo systemctl enable --now virtlogd.service
+```
+
+## Add your user to the libvirt group
+```
+sudo usermod -aG libvirt $USER
+```
+
+## Enabled KVM kernel modules
+```
+lsmod | grep kvm
+```
+
+## Verify virtualization support
+```LC_ALL=C lscpu | grep Virtualization
+
+LC_ALL=C lscpu | grep Virtualization
+```
+
+## Verify libvirt is working
+```
+sudo virsh list --all
+```
+
+
+

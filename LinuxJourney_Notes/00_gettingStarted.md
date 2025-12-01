@@ -1,6 +1,7 @@
 # Getting Started
 
-## User Account managment
+## User Account management
+
 ```bash
 #create user
 sudo useradd joker
