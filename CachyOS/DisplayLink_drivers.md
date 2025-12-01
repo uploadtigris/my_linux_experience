@@ -35,4 +35,9 @@ Reinstalling the DisplayLink drivers
 ```
 yay -S displaylink evdi-dkms
 ```
+Enabling DisplayLink service on start & rebooting
+```
+sudo systemctl enable --now displaylink.service
+sudo reboot
+```
 
