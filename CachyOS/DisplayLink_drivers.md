@@ -40,4 +40,4 @@ Enabling DisplayLink service on start & rebooting
 sudo systemctl enable --now displaylink.service
 sudo reboot
 ```
-
+Success 🎊
