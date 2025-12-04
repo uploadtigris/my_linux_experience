@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_Text-Fu.md",
+                "file": "04_User_Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_Text-Fu"
+              "title": "04_User_Management"
             }
           }
         ],
@@ -200,8 +200,9 @@
   },
   "active": "f5dca8a23312d95e",
   "lastOpenFiles": [
-    "01_commandLine.md",
+    "03_Advanced_Text-Fu.md",
     "02_Text-Fu.md",
+    "01_commandLine.md",
     "00_gettingStarted.md"
   ]
 }
