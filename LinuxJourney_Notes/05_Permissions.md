@@ -99,9 +99,80 @@ umask 021
 - If you want the new default to persist, you'll have to modify your startup file (.profile)
 
 Setuid
+- Used when a normal user needs elevated access to do stuff. The ***Set User ID (SUID)*** allows a user to run a program as the owner of the program file rather than as themselves.
 
+```bash
+# command
+ls -l /usr/bin/passwd
+
+#output
+-rwsr-xr-x 1 root root 47032 Dec 1 11:45 /usr/bin/passwd
+```
+
+- Notice the "s" in the user's section of the permissions
+	- "***s" is the SUID*** --> allows the users who launched the program to get the file owner's permission as well as execution permission, in this case, root
+
+- Modifying SUID
+	- symbolic way
+```bash
+sudo chmod u+s myfile
+
+# S --> this means that it still does the same thing as 's' but it does not have execute permissions.
+```
+	- numerical way
+```bash
+sudo chmod 4755 myfile
+```
+		 
 Setgid
+- allows a program to run as if it were a member of that group
+
+```bash
+# output
+-rwxr-sr-x 1 root tty 19024 Dec 14 11:45 /usr/bin/wall
+
+# s is now in the permission bit in the group permission set
+```
+
+```bash
+#modifying SGID
+sudo chmod g+s myfile
+sudo chmod 2555 myfile
+```
 
 Process Permissions
+- Even though adding s allows you to run the program as root, you cannot do other things as root. 
+- There are three UIDs (User ID) associated with every process
+	- **effective user ID**
+		- ID the kernel uses to determine access rights
+		- "Whose permissions am I acting with right now?"
+	- **real user ID**
+		- ID of the user that launched the process
+		- "'Who launched me?"
+	- **saved user ID**
+		- Allows a process to switch between the effective UID and real UID
+		- Store previous effective UID so the process can switch back
+		- "My backup identity so I can switch back later"
 
-The Stick Bit
+The Sticky Bit
+- A configuration option that can be applied to directories / files
+- When set, that directory can only be deleted or renamed by the file's owner, the directory's owner, or the root user.
+- Useful for shared directories where multiple users need to create and manage their own files w/o interfering with others.
+```bash
+# the global /tmp folder is a great example of this
+ls -ld /tmp
+
+# notice the 't' at the end --> this is the "stick bit"
+drwxrwxrwt 17 root root 4096 Dec 15 11:45 /tmp
+```
+
+Setting up the sticky bit (Symbolic Mode)
+```bash
+chmod +t my_shared_dir
+```
+
+Setting up the sticky bit (Symbolic Mode)
+```bash
+chmod 1755 my_shared_dir
+```
+
