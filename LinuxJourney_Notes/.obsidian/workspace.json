@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "61a62933f0d0d36e",
@@ -200,6 +201,7 @@
   "active": "eebd431341c57811",
   "lastOpenFiles": [
     "05_Permissions.md",
+    "06_Processes.md",
     "04_User_Management.md",
     "02_Text-Fu.md",
     "01_commandLine.md",
