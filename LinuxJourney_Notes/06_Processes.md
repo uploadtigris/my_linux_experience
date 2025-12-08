@@ -140,13 +140,26 @@ Signals
 	- SIGTERM (15): Termination. This is the polite way to ask a process to terminate. ***the default signal sent by the kill command***. Often referred to as **signal 15 Linux**
 	- SIGSTOP:
 
+
 kill (Terminate)
+- default termination with kill sigterm
+	- **kill** , despite it's name, can send various signals
+		- kill sigterm process_ID --> shutdown cleanly
+		- kill -15 process_ID --> equivalent to the command above
+- other useful signals
+	- SIGHUP
+		- kill sighup --> used to tell daemon processes to reload their configuration files
+	- SIGINT
+		- the interrupt signal 2 sent when you press ctrl + c. requests the process to interrupt its current operation
+	- SIGSTOP
+		- the signal 19 pauses a process without temrinating it. the process can be resumed later with the SIGCONT signal
+
 
 Niceness
 
 Process States
 
-/proc filesystem
+/proc file-system
 
 Job Control
 
