@@ -70,7 +70,8 @@ Process Details
 
 Process Creation
 - The Fork and Exec Model
-	- *the primary mechanism for process creation in Linux*
+	- *the 
+primary mechanism for process creation in Linux*
 	- Fork
 		- existing process clones itself, creating it's own Process ID (PID) original becomes a Parent Process (with PPID)
 	- Exec
@@ -86,12 +87,123 @@ Process Termination
 - The Termination Process
 	- `_exit`--> process typically terminates by calling this
 		- Although, this doesn't immediately erase the process. 
-			- parent processes much acknowledge it's child's termination by using the `wait` status. 
+			- *parent processes much acknowledge it's child's termination by using the `wait` status.* 
 		- Upon exiting, the process provides a termination status to the kernel with is an integer value
 			- ***0 --> successful execution***
 			- ***non-zero --> error***
 - Orphan Processes
-	- 
+	- If the parent terminates before its child --> the child becomes and "orphan"
+	- The orphan process is immediately adopted by a special system process, typically "init"
+		- init assumes the role of parents, periodically calling "wait" to obtain the termination status of its adopted children.
+- Zombie Processes
+	- When a child process terminates, but its parent has not yet called **wait**
+		- kernel releases resources, but it keeps an entry in the process table
+	- The zombie is already dead, so they don't consume CPU time.
+	- You cannot kill the zombie with signals as they are not running.
+	- **The process of the parent calling *wait* to clean up a zombie is called "reaping"** --> if the parent process never calls wait, the zombies can accumulate. 
+	- Too many zombie can fill the process table and PREVENT new processes from being create.
+	- If the parent process also terminates, **init** will adopt and **reap** the zombie
+	
+- ***Zombie vs. Orphans***
+	- ***Orphan***
+		- ***active, running process whose parent has died. It is adopted by init and continues to execute until finished***
+	- ***Zombie***
+		- ***dead process that has completed execution but still has an entry in the process table. Waiting for parent process to read its exit status***
+
+
+***In short, an orphan is alive but parent-less, while a zombie is dead but not yet fully reaped by its parent.***
+
+Signals
+- purpose
+	- user interaction
+		- ex: ctrl+C --> interrupt or suspend foreground processes
+	- kernel notifications
+		- kernel can send signal to a process to notify it of hardware or software issues, such as an illegal memory access (SIGSEGV)
+	- process management
+		- sysadmins use signals to manage life-cycle of other processes, such as requesting termination
+
+- the signal life-cycle
+	- ignore the signal
+		- process discard signal, continues execution
+	- catch the signal
+		- process executes a custom function called "signal handler"
+	- perform the default action
+		- if not caught or ignored, the default action is taken. (usually means terminating the process)
+	- block the signal
+		- if the signal is in the process's signal mask, it remains pending until it is unblocked
+
+- Common Linux Process Signals
+	- SIGHUP (1): Hangup. often used to tell a daemon to reload its configuration
+	- SIGINT (2): Interrupt. set by ctrl+c. a *request* to terminate the process
+	- SIGKILL (9): Kill. ***immediate, forceful termination.*** process cannot catch, ignore, or block this signal.
+	- SIGSEGV (11): segmentation fault. indicates the process made an invalid memory reference.
+	- SIGTERM (15): Termination. This is the polite way to ask a process to terminate. ***the default signal sent by the kill command***. Often referred to as **signal 15 Linux**
+	- SIGSTOP:
+
+kill (Terminate)
+
+Niceness
+
+Process States
+
+/proc filesystem
+
+Job Control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Signals
 
