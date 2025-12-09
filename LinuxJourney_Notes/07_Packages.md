@@ -92,8 +92,73 @@ rpm: $ rpm -qa # --> query all
 yum and apt
 - **High-Level --> Package Management Systems**
 	- manage repos, resolve dependencies, download packages, and call the low level tools underneath
-- 
+- yum --> red hat, centos, fedora
+- apt --> debian based distros
+
+```bash
+# installing and removing packages
+debian: $ apt install package_name
+RPM: $ yum install package_name
+
+# removing packages
+apt remove package_name
+yum erase package_name
+```
+
+```bash
+# updating and inspecting packages
+
+# debian based systems
+# update --> refreshes the package list
+# upgrade --> upgrade installs the new versions
+apt update ; apt upgrade 
+
+# show details about a specific package
+apt show package_name
+yum info package_name
+```
+
+
+
+
 
 ![[Pasted image 20251209162202.png]]
 
-Compile Source Code
+**Compile Source Code**
+- preparing your system
+	- build-essential
+		- **sudo apt install build-essential**
+			- downloads the needed tools for compilation
+		- extract the contents of the source code package --> typically the .tar.gz file
+
+```bash
+tar -xzvf package.tar.gz
+
+# BEFORE proceeding always check for a README or INSTALL file inside the extracted directory --> these files often contains epcific instructions of dependencies required for that partciular package.
+```
+
+- the standard build process
+	- the three step process
+
+```bash
+# 1) configure script -- check system for all the necessary dependencies and libraries the software needs to build and run
+./configure # ./ --> tells the sheel to execute the script from the CD
+
+#2) make command --> reads a file named the Makefile --> contains a set of rules on how to compile the source code into ececutable programs
+make
+
+#3) install
+sudo make installl
+```
+
+- a better way to install
+	- while **sudo make works** it has a significant drawback: it doesn't register the software with your system's package manager.
+		-  {{{ a *much* better approach is to use **checkinstall** }}}
+			- runs the installation but instead of directly copying files, creates a native system package and installs that.
+
+```bash
+sudo checkinstall
+# - integrates compiled software in PMS (so you can easiely remove later)
+# - checkinstall >> make install (where you would need to navigate to the source directory)
+```
+

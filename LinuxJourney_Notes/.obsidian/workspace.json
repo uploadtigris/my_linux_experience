@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_Packages.md",
+                "file": "08_Devices.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07_Packages"
+              "title": "08_Devices"
             }
           },
           {
@@ -200,6 +200,7 @@
   },
   "active": "eebd431341c57811",
   "lastOpenFiles": [
+    "07_Packages.md",
     "Pasted image 20251209162202.png",
     "06_Processes.md",
     "05_Permissions.md",
