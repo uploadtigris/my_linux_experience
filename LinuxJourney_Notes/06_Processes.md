@@ -140,12 +140,16 @@ Signals
 	- SIGTERM (15): Termination. This is the polite way to ask a process to terminate. ***the default signal sent by the kill command***. Often referred to as **signal 15 Linux**
 	- SIGSTOP:
 
-
 kill (Terminate)
 - default termination with kill sigterm
 	- **kill** , despite it's name, can send various signals
 		- kill sigterm process_ID --> shutdown cleanly
 		- kill -15 process_ID --> equivalent to the command above
+- Forcing termination w/ SIGKILL
+	- kill -9 12445
+	- -9 --> **terminates the process immediately** w/o giving it a chance
+	- SIGKILL is an unconditional termination
+	- SIGTERM is a polite request
 - other useful signals
 	- SIGHUP
 		- kill sighup --> used to tell daemon processes to reload their configuration files
@@ -153,18 +157,97 @@ kill (Terminate)
 		- the interrupt signal 2 sent when you press ctrl + c. requests the process to interrupt its current operation
 	- SIGSTOP
 		- the signal 19 pauses a process without temrinating it. the process can be resumed later with the SIGCONT signal
+- checking process existence with kill -0
+	- does NOT send a signal --> instead checks if a process w/ the specified PID exists and if you have permission to signal it
 
+```bash
+# If the command executes successfully
+# If it fails, the process does not exist or you lack permissions
+kill -0 12445
+```
 
 Niceness
+- How the CPU manages processes
+	- Each process is allocated a small "time slice" on the CPU
+	- When "time slice" is done, the process is paused --> CPU goes to next
+		- The kernel's scheduler is highly efficient at managing these rapid switches
+- What is Niceness in Linux
+	- scale -20 (high priority, not "nice", demands CPU time) --> 19 (low priority, "nice", yields CPU time to others)
+	- under "top" the "NI" column displays the **niceness value**
+
+```bash
+# starting a linux process with a diff niceness value
+nice -n 5 apt upgrade
+```
+
+```bash
+# changing the niceness level of an already running process
+renive 10 -p 3245
+```
 
 Process States
+- running `ps aux` we will see the "STAT column" understanding the codes in this column is key to mastering process management
+	- R (Running or Runnable)
+		- actively executing on a CPU core or is in the run queue, ready to be executed as soon as a CPU becomes available
+	- S (Interruptible Sleep)
+		- one of the most common states in Linux
+		- Process is waiting for an event to complete --> i.e. user input / network packet to arrive
+		- "interruptible" = can be woken up by signals
+	- D (Uninterruptible Sleep)
+		- CANNOT be interrupted by a signal
+		- Typically used for short periods during I/O operations where interruptions could lead to a corrupted state
+		- If a process remains in this state for a long time, it may indicate a problem with hardware or a driver.
+	- Z (Zombie)
+		- process executed --> waiting for parent to read exit status
+	- T (Stopped)
+		- when suspended by a job control signal (ex. Ctrl+Z)
+		- being traced by a debugger --> resumed with SIGCONT
 
 /proc file-system
+- everything in Linux is a file. this concept extends to running processes, whose info is stored in a special virtual file system known as /proc
+- Exploring the /proc Directory
+	- created in memory by the kernel
 
-Job Control
+```bash
+ls /proc
+# each numbered directory corresponds to a directory
+# other files like cpuinfo give system the hardware info
+```
 
+- Accessing Specific Process Information
+	- cat /proc/{found PID}/status
+	- find PID with "ps"
+- A dashboard of System Data
+	- `/proc` file-system as the raw data source for many system monitoring tools
+	- **utilities like top, ps, and htop read from /proc**
+		- you can gathering metrics to build custom scripts or a monitoring dashboard
 
+**Job Control**
+- running a command in the background
 
+```bash
+# start a proces directly in the background (&)
+sleep 1000 &
+sleep 1001 &
+sleep 1002 &
+```
+
+```bash
+# job 
+# ID Job | status | original command
+[1]    Running     sleep 1000 &
+[2]-   Running     sleep 1001 &
+[3]+   Running     sleep 1002 &
+```
+
+- **Managing Active Processes**
+	- Ctrl+Z --> suspend the running process
+	- bg --> send suspended job to the background
+- Bringing a Job to the Foreground
+	- fg --> bring to the foreground
+	- fg %{process ID}
+- Terminating Background Jobs
+	- kill %1
 
 
 
