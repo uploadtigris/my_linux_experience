@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "eebd431341c57811",
+            "id": "f5dca8a23312d95e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,20 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "08_Devices"
-            }
-          },
-          {
-            "id": "f5dca8a23312d95e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04_User_Management.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "04_User_Management"
             }
           }
         ]
@@ -92,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "61a62933f0d0d36e",
@@ -198,13 +183,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "eebd431341c57811",
+  "active": "f5dca8a23312d95e",
   "lastOpenFiles": [
+    "09_The_Filesystem.md",
+    "08_Devices.md",
     "07_Packages.md",
-    "Pasted image 20251209162202.png",
     "06_Processes.md",
     "05_Permissions.md",
     "04_User_Management.md",
+    "2025-12-09.md",
+    "Untitled.canvas",
+    "Untitled.base",
+    "Pasted image 20251209162202.png",
     "02_Text-Fu.md",
     "01_commandLine.md",
     "03_Advanced_Text-Fu.md",
