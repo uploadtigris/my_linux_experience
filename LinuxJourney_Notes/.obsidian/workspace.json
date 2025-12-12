@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08_Devices.md",
+                "file": "09_The_Filesystem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08_Devices"
+              "title": "09_The_Filesystem"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "61a62933f0d0d36e",
@@ -185,10 +186,10 @@
   },
   "active": "f5dca8a23312d95e",
   "lastOpenFiles": [
-    "09_The_Filesystem.md",
-    "08_Devices.md",
     "07_Packages.md",
     "06_Processes.md",
+    "09_The_Filesystem.md",
+    "08_Devices.md",
     "05_Permissions.md",
     "04_User_Management.md",
     "2025-12-09.md",
