@@ -151,10 +151,89 @@ resizepart 1 8000MB
 ```
 # Creating Filesystems
 
+- AFTER partitioning a disk --> next step is creating a filesystem
+	- often called **formatting**, this process organizes the partition so it can store files and directories.
+
+**the mkfs commands**
+
+```bash
+sudo mkfs -t ext4 /dev/sdb2
+
+# sudo --> executes command w/ admin privileges (req. for disk management)
+# mkfs --> command to create a file system
+#-t ext4 --> -t flag specifies filesystem type
+# /dev/sdb2 --> target partition where fs will be created
+```
+
+**a word of caution**
+- ***You should only create a filesystem on a newly created partition or on a disk you intend to {completely erase.}***
+- It will ***permanently delete all existing data, and you will likely corrupt the filesystem*** if you attempt to create a new one on top of an existing one without proper preparation.
 # mount and umount
+
+**how to mount a filesystem**
+
+```bash
+#1 Make a mount point
+sudo mkdir /mydrive
+```
+
+```bash
+#2 Attached your device
+sudo mount -t ext4 /dev/sdb2 /mydrive
+```
+
+**how to unmount a filesystem in Linux**
+
+```bash
+# best practice is to use sudo umount. to detached device & cleanly remove
+sudo umount /dev/sdb2
+
+# You CANNOT umount a device if it is currently in use
+```
+
+**using UUIDs for Stable Mounting**
+
+- The kernel names the devices **in the order it discovers them**
+- This means the names can change between reboots
+- To avoid issues, use the universally unique ID (UUID)
+
+```bash
+# view UUIDs for block devices
+sudo blkid
+```
+
+```bash
+# mount device
+sudo mount UUID=130b882f-7d79-436d-a096-1e594c92bb76 /mydrive
+```
 
 # /etc/fstab
 
+When you want to automatically mount filesystems at startup, you configure them in a special configuration file located at `/etc/fstab`
+
+**The fstab file structure**
+- **Device Identifier**
+	- specifies the device to mount. modern systems use UUID
+- **Mount Point**
+	- directory in filesystem where device will be mounted
+- **Filesystem Type**
+	- self explanatory
+- **Options**
+	- consult mount manpage
+- **Dump**
+	- the field used by the dump utility to determine if a filesystem needs to be backed up
+- **Pass**
+	- used by fsck to determine order for checking filesystems at boot time
+		- / --> 1
+		- others --> 2
+		- not checked --> 0
+
+how to edit
+- use nano with root to edit `/etc/fstab`
+- **Be extremely careful when editing this file; an incorrect entry in the fstab can prevent your system from booting correctly.**
+- ALWAYS BACKUP THE FILE
+- test --> `sudo mount -a`
+	- which mounts all filesystems listed in `/etc/fstab`
 # swap
 
 # Disk Usage
