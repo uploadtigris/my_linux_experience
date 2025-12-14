@@ -1,1 +1,6 @@
-{}
+{
+  "cssTheme": "AnuPpuccin",
+  "showViewHeader": true,
+  "showRibbon": true,
+  "baseFontSizeAction": true
+}

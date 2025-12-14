@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LinuxJourney_Notes/02_Text-Fu.md",
+                "file": "LinuxJourney_Notes/10_Boot_the_System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_Text-Fu"
+              "title": "10_Boot_the_System"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "7b6460105bc0bfed",
@@ -185,6 +186,15 @@
   },
   "active": "e7cb50cc250926a7",
   "lastOpenFiles": [
+    "LinuxJourney_Notes/09_The_Filesystem.md",
+    "LinuxJourney_Notes/10_Boot_the_System.md",
+    "LinuxJourney_Notes/02_Text-Fu.md",
+    "Arch_Linux/maitenance.md",
+    "Arch_Linux/installation.md",
+    "imgs/Screenshot_20251019_123554.png",
+    "imgs/ff.png",
+    "imgs/fastfetch.png",
+    "Ubuntu24.04LTS/Logs.md",
     "LinuxJourney_Notes/01_commandLine.md",
     "CachyOS/GIF to animated wallpaper.md",
     "CachyOS/installing_virtmanager.md",
