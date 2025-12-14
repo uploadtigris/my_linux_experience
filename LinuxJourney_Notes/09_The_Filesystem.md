@@ -336,5 +336,19 @@ stat ~/Desktop
 
 **Understanding Hard Links**
 
+-  Another entry that points directly to the same inode as the original file
+
 **Creating Symlinks and Hard Links**
+
+```bash
+# symbolic link
+ln -s /path/to/original /path/to/link
+```
+
+```bash
+# hard link
+ln /path/to/original /path/to/link
+```
+
+
 
