@@ -228,7 +228,7 @@ When you want to automatically mount filesystems at startup, you configure them 
 		- others --> 2
 		- not checked --> 0
 
-how to edit
+**how to edit**
 - use nano with root to edit `/etc/fstab`
 - **Be extremely careful when editing this file; an incorrect entry in the fstab can prevent your system from booting correctly.**
 - ALWAYS BACKUP THE FILE
@@ -236,10 +236,105 @@ how to edit
 	- which mounts all filesystems listed in `/etc/fstab`
 # swap
 
+```bash
+mkswap /dev/sdb2 --> initialize swap areas
+
+swapon /dev/sdb2 --> will enable the swap device
+
+to have swap partition persist --> add entry to /etc/fstab (using sw filesystem)
+
+remove swap: swapoff /dev/sdb2
+```
+
+generally, you should allocate 2x of swap space as you have memory.
 # Disk Usage
 
+Checking Filesystem Space with df (disk free)
+```bash
+df -h
+```
+
+Analyzing Inode Usage
+```bash
+# show the inodes --> storing metadata about files
+df -i
+```
+
+Summarizing Directory Usage with du
+```bash
+# shows the disk usage for each subdirectory in your current location
+du -h
+```
+
+df --> check how much disk is free
+du --> check the disk usage of specific files and directories
 # Filesystem Repair
 
+fsck (filesystem check)
+- used to check consistency of filesystem and can even try to repair it for us
+- when you boot, fsck will run before disk is mounted
+- make sure to do this from somewhere you can access your filesystem w/o it being mounted
+
+```bash
+sudo fsck /dev/sda
+```
 # Inodes
 
+**what is it?**
+
+It is a database that holds data on
+- file type
+- owner
+- group
+- access permissions
+- timestamps (of diff sorts)
+- number of hard links to the file
+- size of the file
+- number of blocks allocated to the file
+- points to the file's data blocks (most important!)
+
+**Inode creation and allocation**
+
+- When a filesystem is created, space for inodes is also allocated
+
+```bash
+# see how many inodes are left on your system
+df -i
+```
+
+**viewing inode information**
+
+```bash
+# the left most number is the "inode ID"
+ls -li
+```
+
+```bash
+# view detailed info about a file's "i node"
+stat ~/Desktop
+```
+
+**how an I-node points to data**
+
+- Inodes point to the actual data blocks of your files.
+- typical inodes have 15 pointers
+	- first 12 --> data blocks
+	- 13 --> block with more pointers
+	- 14 & 15 --> blocks of nested pointers
+- small files can be accessed quickly using the direct pointers
+- larger files are located through the nested pointers
 # symlinks
+
+**The Link Count**
+
+- The total number of **hard links** the file has
+
+**Understanding Symlinks**
+
+- Windows == Shortcuts
+- Linux == Symbolic Link / Symlink
+
+**Understanding Hard Links**
+
+**Creating Symlinks and Hard Links**
+
