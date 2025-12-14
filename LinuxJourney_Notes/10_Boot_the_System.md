@@ -90,6 +90,16 @@
 
 **System V Init**
 
+- traditional init system for Linux
+- follows a sequential startup procedure defined by scripts
+- system's state is managed through `runlevels`
+
 **Upstart**
 
+- event-based init system
+- starts and stops services (called jobs) in response to system events (such as network device becoming available)
+
 **systemd**
+
+- It is a goal-oriented system that manages dependencies aggressively.
+- Define a target state & systemd works to satisfy all dependencies.
