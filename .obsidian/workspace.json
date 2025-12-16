@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LinuxJourney_Notes/10_Boot_the_System.md",
+                "file": "LinuxJourney_Notes/11_Kernel.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10_Boot_the_System"
+              "title": "11_Kernel"
             }
           }
         ]
@@ -186,8 +186,8 @@
   },
   "active": "e7cb50cc250926a7",
   "lastOpenFiles": [
-    "LinuxJourney_Notes/09_The_Filesystem.md",
     "LinuxJourney_Notes/10_Boot_the_System.md",
+    "LinuxJourney_Notes/09_The_Filesystem.md",
     "LinuxJourney_Notes/02_Text-Fu.md",
     "Arch_Linux/maitenance.md",
     "Arch_Linux/installation.md",
